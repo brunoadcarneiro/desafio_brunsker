@@ -1,0 +1,83 @@
+<script>
+    function editar(id) {
+
+        location.href = '/atualizarImovel?id=' + id
+
+    }
+
+    function detalhar(id) {
+
+        location.href = '/detalheImovel?id=' + id
+
+    }
+
+    function remover(id) {
+
+        var resultado = confirm("Deseja excluir o item?");
+        if (resultado == true) {
+            location.href = '/removerImovel?id=' + id
+        } else {
+            location.href = '/listar'
+        }
+
+    }
+</script>
+<main class="container col-md-9 ml-sm-auto col-lg-10 px-4 mb-4">
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h1 class="h2">Administração de Imoveis</h1>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="container-fluid">
+				<div class="form-row mb-3">
+					<div class="col-sm-12">
+						<form action="/listar" method="get">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="pesquisar por uma empresa..." name="pesqEmp">
+								<div class="input-group-append">
+									<!--  -->
+									<button class="btn btn-dark text-center" type="submit">Pesquisar</button>
+								</div>
+							</div>
+
+						</form>
+					</div>
+				</div>
+				
+                <div class="row">
+                                <table class="table table-head-fixed table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th class="col-lg-5">Titulo</th>
+                                            <th class="col-lg-3">Descrição</th>
+                                            <th class="col-lg-2">Valor</th>
+                                            <th class="col-lg-3">Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <?php foreach ($this->view->imoveis as $indice => $imovel) { ?>
+
+                                            <tr>
+                                                <td><?= $imovel->id_imovel ?></td>
+                                                <td><?= $imovel->titulo ?></td>
+                                                <td><?= $imovel->descricao ?></td>
+                                                <td><?= $imovel->valor ?></td>
+                                                <td>
+                                                    <i class="btn btn-sm btn-info" onclick="detalhar(<?= $imovel->id_imovel ?>)">Ver</i>
+                                                    <i class="btn btn-sm btn-primary" onclick="editar(<?= $imovel->id_imovel ?>)">Edit</i>
+                                                    <i class="btn btn-sm btn-danger" onclick="remover(<?= $imovel->id_imovel ?>)">Del</i>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
+
+                                    </tbody>
+                                </table>
+                            </div>
+			</div>
+
+		</div>
+	</div>
+</main>

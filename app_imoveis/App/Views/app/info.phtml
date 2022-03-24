@@ -1,0 +1,64 @@
+<main class="container col-md-9 ml-sm-auto col-lg-10 px-4 mb-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Detalhe do Imovel</h1>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="container-fluid">
+
+                <div class="content">
+                    <!-- Conteudo para alterar as paginas-->
+                    <div class="container-fluid">
+                        <div class="row">
+                            <table class="table table-head-fixed">
+                                <tbody>
+
+                                    <tr>
+                                        <td><b>Titulo:</b></td>
+                                        <td><?= $this->view->imovelDetalhe['titulo'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Descrição:</b></td>
+                                        <td><?= $this->view->imovelDetalhe['descricao'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Valor:</b></td>
+                                        <td><?= $this->view->imovelDetalhe['valor'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>CEP:</b></td>
+                                        <td><?= $this->view->imovelDetalhe['cep'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Rua:</b></td>
+                                        <td><?= $this->view->imovelDetalhe['rua'] ?>, <?= $this->view->imovelDetalhe['numero_end'] ?>, <?= $this->view->imovelDetalhe['complemento_end'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Bairro:</b></td>
+                                        <td><?= $this->view->imovelDetalhe['bairro'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Cidade:</b></td>
+                                        <td><?= $this->view->imovelDetalhe['cidade'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Estado:</b></td>
+                                        <td><?= $this->view->imovelDetalhe['estado'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Descrição:</b></td>
+                                        <td><?= $this->view->imovelDetalhe['descricao'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Imagem:</b></td>
+                                        <td><img class="card-img-top" style="height: 100%; width: 100%;" src="<?= $this->view->imovelDetalhe['imagem'] ?>" alt="Imagem de capa do card"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- FIM Conteudo -->
+                </div>
+            </div>
+           

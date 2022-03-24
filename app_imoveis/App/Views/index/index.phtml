@@ -1,0 +1,43 @@
+<main class="container col-md-9 ml-sm-auto col-lg-10 px-4 mb-4">
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h1 class="h2">Imoveis</h1>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="container-fluid">
+				<div class="form-row mb-3">
+					<div class="col-sm-12">
+						<form action="/empresa" method="get">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="pesquisar por uma empresa..." name="pesqEmp">
+								<div class="input-group-append">
+									<!--  -->
+									<button class="btn btn-dark text-center" type="submit">Pesquisar</button>
+								</div>
+							</div>
+
+						</form>
+					</div>
+				</div>
+				<div class="row">
+					<pre>
+				<?php //var_dump($this->view->imoveis); ?>
+				</pre>
+					<?php foreach ($this->view->imoveis as $indice => $imovel) { ?>
+						<div class="col-sm-3 mb-4">
+							<div class="card">
+								<img class="card-img-top" style="height: 100%; width: 100%;" src="<?= $imovel->imagem ?>" alt="Imagem de capa do card">
+								<div class="card-body">
+									<h2 class="card-text"><?= $imovel->titulo ?></h2>
+									<p class="card-text"><?= $imovel->descricao ?></p>
+								</div>
+							</div>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</main>
